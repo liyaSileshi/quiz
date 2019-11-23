@@ -4,7 +4,9 @@
         <title> </title>
     </head>
     <body>
-
+        <div id='quiz' class='container quiz'>
+            <!-- quiz questions -->
+        </div>
 
         <!-- Scripts -->
         <script>
@@ -37,6 +39,15 @@
                     correct: 0
                 }
             ]
+
+            function init() {
+                questions.forEach( function(question){
+                    console.log(question.q)
+
+                })
+            }
+
+            init()
         </script>
     </body>
 </html>
