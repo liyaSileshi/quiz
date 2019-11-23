@@ -41,10 +41,32 @@
             ]
 
             function init() {
+                const quizEl = document.getElementById('quiz')
+                let quizStr = ''
+        
                 questions.forEach( function(question){
-                    console.log(question.q)
+                    let answerStr = ''
+                    question.a.forEach(function(answer){
+                        answerStr += `
+                        <li>
+                            <label>
+                                <input type='radio' name='${question.q}'>
+                                ${answer} 
+                            </label>
+                        </li>
+                        `
+                    })
 
+                    quizStr += `
+                    <form>
+                        <h1>${question.q}</h1>
+                        <ul>
+                            ${answerStr}
+                        </ul>
+                    </form>
+                    `
                 })
+                quizEl.innerHTML = quizStr
             }
 
             init()
